@@ -18,7 +18,7 @@ RUN wget "https://sourceforge.net/projects/aruco/files/3.1.12/aruco-3.1.12.zip" 
 # code
 #RUN git clone https://github.com/anton-galkovsky/aruco_ros_docker.git
 COPY src /aruco_ros_docker/src
-RUN mv /aruco-3.1.12 /aruco_ros_docker/src/aruco_ros/lib/aruco-3.1.12
+RUN mkdir /aruco_ros_docker/src/aruco_ros/lib && mv /aruco-3.1.12 /aruco_ros_docker/src/aruco_ros/lib/aruco-3.1.12
 
 RUN /bin/bash -c "cd /aruco_ros_docker/src; source /opt/ros/melodic/setup.bash; catkin_init_workspace; cd ..; \
                   catkin_make --pkg duckietown_msgs; source devel/setup.bash; catkin_make"
