@@ -1,0 +1,10 @@
+<launch>
+
+    <node name="aruco_detector" type="aruco_detector" pkg="aruco_ros" output="screen">
+        <remap from="~trajectories_1"             to="qqqq"/>
+        <remap from="~trajectories_2"             to="wwww"/>
+
+        <param name="files/trajs_1"               value="aaa"/>
+        <param name="files/trajs_2"               value="bbb"/>
+    </node>
+</launch>
